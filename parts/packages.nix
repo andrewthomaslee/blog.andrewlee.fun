@@ -13,7 +13,7 @@
           mkdir -p tmp
           cp -r $src/hugo/* tmp/
           mkdir -p $out/var/www
-          hugo -s tmp --destination $out/var/www --minify --baseURL "/"
+          hugo -s tmp --destination $out/var/www --minify
         '';
       };
       nginxPort = 8080;
