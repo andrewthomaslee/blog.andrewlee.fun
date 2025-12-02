@@ -1,0 +1,15 @@
+apiVersion: gateway.networking.k8s.io/v1beta1
+kind: HTTPRoute
+metadata:
+  name: hugo
+spec:
+  parentRefs:
+  - name: traefik-gateway
+    namespace: traefik
+    sectionName: web
+  hostnames:
+  - blog.andrewlee.fun
+  rules:
+  - backendRefs:
+    - name: hugo
+      port: 80
