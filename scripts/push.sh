@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 set -euo pipefail
+source $REPO_ROOT/.env
 
 nix build $REPO_ROOT?submodules=1#hugo-container
 IMAGE_TAG=$(docker load < result | grep -o 'hugo-container:[^ ]*')

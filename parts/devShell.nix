@@ -8,6 +8,7 @@
       bash_aliases = pkgs.writeText "bash_aliases" ''
         alias hs="nix run $REPO_ROOT#server"
         alias hc="nix run $REPO_ROOT#container"
+        alias hp="nix run $REPO_ROOT#push"
       '';
     in {
       default = pkgs.mkShell {
