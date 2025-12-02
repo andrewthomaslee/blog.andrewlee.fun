@@ -32,6 +32,7 @@
           server {
             listen ${toString nginxPort};
             root ${hugo-package}/var/www;
+            port_in_redirect off;
             location ~* \.(css|js|png|jpg|svg|ico)$ {
               expires 1y;
               add_header Cache-Control "public, max-age=31536000";
