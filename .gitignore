@@ -1,6 +1,7 @@
 result
 .env
 public/
+resources/
 .DS_Store
 .vscode
 .idea

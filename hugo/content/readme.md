@@ -7,3 +7,5 @@ title = 'Readme'
 # blog.andrewlee.fun
 
 This is my personal blog.
+
+![Fish](images/Me_holding_small_fish.jpg)

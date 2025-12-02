@@ -9,6 +9,7 @@
         alias hs="nix run $REPO_ROOT#server"
         alias hc="nix run $REPO_ROOT#container"
         alias hp="nix run $REPO_ROOT#push"
+        alias hn="hugo new $REPO_ROOT/hugo/content/post/title_of_the_post.md -s $REPO_ROOT/hugo"
       '';
     in {
       default = pkgs.mkShell {
