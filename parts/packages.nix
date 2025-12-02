@@ -18,6 +18,7 @@
       };
       nginxPort = 8080;
       nginxConf = pkgs.writeText "nginx.conf" ''
+        user nobody nobody;
         daemon off;
         error_log /dev/stderr;
         pid /dev/null;
