@@ -1,0 +1,39 @@
+baseURL = "https://blog.andrewlee.fun/"
+languageCode = "us-en"
+title = "andrewlee's blog"
+theme = "github-style"
+pygmentsCodeFences = true
+pygmentsUseClasses = true
+
+[params]
+  enableSearch = true
+  author = "Andrew Thomas Lee"
+  description = "The suffering is worth it."
+  github = "andrewthomaslee"
+  linkedin = "andrew-lee-0a1159382"
+  instagram = "netsammateo_golden"
+  email = "andrewthomaslee.business@gmail.com"
+  url = "https://blog.andrewlee.fun"
+  keywords = "blog, tech, programming, coder, developer, andrew lee, andrew lee blog, nix, linux, kubernetes, rke2, k3s, docker, website hosting, programmer, engineer, software engineer, software developer, web developer, python"
+  lastmod = true
+  userStatusEmoji = "🛠️"
+  favicon = "/images/andrewthomaslee-transparent-logo.png"
+  avatar = "/images/andrewthomaslee-logo.png"
+  headerIcon = "/images/andrewthomaslee-grayscale-transparent-logo.png"
+  location = "Fort Worth, Texas"
+
+  [[params.links]]
+    title = "netsam"
+    href = "https://www.netsam.com/"
+    icon = "https://www.netsam.com/Portals/0/netsam-logo2(1).ico?ver=dtsRDLRRS8s8s9mM7iZ-Fw%3d%3d"
+
+[frontmatter]
+  lastmod = ["lastmod", ":fileModTime", ":default"]
+
+[outputs]
+  home = ["html", "json"]
+
+[outputFormats.json]
+  mediaType = "application/json"
+  baseName = "index"
+  isPlainText = false

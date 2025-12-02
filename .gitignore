@@ -1,0 +1,6 @@
+result
+.env
+public/
+.DS_Store
+.vscode
+.idea
