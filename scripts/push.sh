@@ -4,7 +4,8 @@ set -euo pipefail
 
 nix build $REPO_ROOT?submodules=1#hugo-container
 IMAGE_TAG=$(docker load < result | grep -o 'hugo-container:[^ ]*')
-echo "$IMAGE_TAG"
-echo "Web Server is available at http://localhost:8080/"
-echo "Press Ctrl+C to stop"
-docker run --rm -p 8080:8080 $IMAGE_TAG
+HASH=${IMAGE_TAG#*:}
+NEW_TAG="$REGISTRY/$REPO:$HASH"
+echo "Pushing $NEW_TAG"
+docker tag $IMAGE_TAG $NEW_TAG
+docker push $NEW_TAG
