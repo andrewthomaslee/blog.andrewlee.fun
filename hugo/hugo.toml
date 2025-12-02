@@ -17,9 +17,9 @@ pygmentsUseClasses = true
   keywords = "blog, tech, programming, coder, developer, andrew lee, andrew lee blog, nix, linux, kubernetes, rke2, k3s, docker, website hosting, programmer, engineer, software engineer, software developer, web developer, python"
   lastmod = true
   userStatusEmoji = "🛠️"
-  favicon = "/images/andrewthomaslee-transparent-logo.png"
+  favicon = "/favicon.ico"
   avatar = "/images/andrewthomaslee-logo.png"
-  headerIcon = "/images/andrewthomaslee-grayscale-transparent-logo.png"
+  headerIcon = "/favicon.ico"
   location = "Fort Worth, Texas"
 
   [[params.links]]
