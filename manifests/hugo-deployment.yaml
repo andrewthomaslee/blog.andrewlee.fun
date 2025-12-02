@@ -17,6 +17,8 @@ spec:
         runAsUser: 65534
         runAsGroup: 65534
         fsGroup: 65534
+        seccompProfile:
+          type: RuntimeDefault
       containers:
       - name: hugo
         image: andrewthomaslee/blog.andrewlee.fun:35mlh98am0w3zfm3vgp9fd4qn1n92cr1
