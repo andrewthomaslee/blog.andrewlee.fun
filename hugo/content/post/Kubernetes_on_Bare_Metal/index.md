@@ -8,7 +8,7 @@ summary = 'Creating a RKE2🚜 cluster on bare metal Hetzner servers with NixOS�
 ## 13 Months
 
 October 2024 I decided to try and learn Computer Programming, but for real this time.
-13 months later and I'm deep into self hosting RKE2🚜 Kubernetes clusters on bare metal Hetzner servers with NixOS❄️.
+13 months later and I'm deep into self hosting RKE2🚜 Kubernetes clusters on bare metal Hetzner servers with NixOS❄️
 
 ## 🐇🕳️
 
@@ -16,6 +16,8 @@ I have a strong adversion to paying for a service I know I can do myself. That i
 
 But if you find yourself getting into the game of creating the abstractions. You'll find out that is one large rabbit hole. At some point you'll have to pay for *something*.
 
+
+## Hetzner 🤖
 I settled on paying for bare metal auctioned servers from Hetzner. 
 
 I bought 3 server with similar specs:
@@ -29,7 +31,7 @@ Total cost is ~ `$120` per month + `$6` load balancer.
 
 *WAY* bigger than I need. . . But small cost for that much metal. ⚙️
 
-## ❄️
+## NixOS ❄️
 
 NixOS was an obvious choice. 
 
@@ -37,32 +39,48 @@ I want a system that has built in **rollbacks**, is **immutable**, is **reproduc
 
 With NixOS my servers' OS configuration lives in version control git first, and then installed to the servers. No more random magic /etc/ files.
 
-The are things to not like about NixOS. Learning curve. To use it you need to know Nix the programming language. Must people have an adversion to Nix.
+The are things to not like about NixOS. Learning curve. To use it you need to know Nix the programming language. Most people have an adversion to Nix.
 
-But I'm well aware that NixOS is the superior OS. . .  for me. Not everyone.
+But I'm well aware that NixOS is the superior OS 👑 . . .  for me. Not everyone.
 
 ## K3s, then RKE2🚜
 
 K3s is f*cking great. But RKE2 feels cooler somehow.
 
-Firstly I built many clusters with K3s and loved how easy and plugable everything was. But then I noticed that RKE2 got added as a NixOS module so I could easily* swap K3s service definitions for RKE2 in my cluster repo and things would just work.
+First I built many clusters with K3s and loved how easy and plugable everything was. But then I noticed that RKE2 got added as a NixOS module so I could easily* swap K3s service definitions for RKE2 in my cluster repo and things would just work.
 
-Things did just work. But custom CNI helm installations didn't work so easily.
+Things did just work except networking. I fought a custom Cilium helm install for 2 days and then decided to stick to the RKE2 Cilium defaults.
 
 I learned that Rancher makes K3s and RKE2 with really good documentation and really good **defaults**. Just try and stick to the defaults. Please.
 
-## Architecture
+## Cluster Architecture
+![RKE2-Infra](RKE2-Infra.png)
+
+## Features
 Host OS Features:
 - `Tailscale`
 - `HAProxy` for TLS termination + `keepalived` for load balancing
 
 Cluster Features:
 - `Cilium` with Kube-Proxy replacement
-- `Longhorn`
 - `Traefik` with Gateway API
+- `Longhorn`
 - `ArgoCD`
 
 
+## What I learned 📚
+##### ⛔ Failures
+- Don't fight the defaults
+- Results are better than a perfect solution
+- Just pay for IPv4 addresses, IPv6 only is *do-able* but not worth it
 
+##### 🏅 Successes
+- Zero vendor lock-in becuase my cluster is defined in git
+- Reproducible builds, if things go wrong I can blow up the servers and reformat disks and start fresh
+- Known system configurations
+- Complete control over the host OS
+- Move servers anytime I want
+- I AM THE CLOUD☁️
 
-
+## 🔗
+- [Clan-Kube](https://github.com/andrewthomaslee/Clan-Kube.git) is the public repo for my cluster(s)
