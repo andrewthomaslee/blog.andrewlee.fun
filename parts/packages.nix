@@ -45,9 +45,7 @@
           }
         }
       '';
-    in {
-      default = hugo-package;
-      hugo-container = pkgs.dockerTools.buildLayeredImage {
+      containerConfig = {
         name = "hugo-container";
         created = "now";
         contents = with pkgs; [
@@ -64,6 +62,10 @@
           ExposedPorts = {"${toString nginxPort}/tcp" = {};};
         };
       };
+    in {
+      default = hugo-package;
+      hugo-container = pkgs.dockerTools.buildLayeredImage containerConfig;
+      hugo-container-stream = pkgs.dockerTools.streamLayeredImage containerConfig;
     };
   };
 }
