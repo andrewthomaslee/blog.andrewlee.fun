@@ -17,6 +17,14 @@
         packages = with pkgs; [
           nginx
           hugo
+          kubectl
+          chromium
+          tmux
+          skopeo
+          docker
+          jq
+          yq
+          gzip
         ];
         shellHook = ''
           export REPO_ROOT=$(git rev-parse --show-toplevel)
