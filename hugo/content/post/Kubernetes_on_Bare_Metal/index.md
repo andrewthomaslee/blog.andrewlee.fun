@@ -54,7 +54,7 @@ Things did just work except networking. I fought a custom Cilium helm install fo
 I learned that Rancher makes K3s and RKE2 with really good documentation and really good **defaults**. Just try and stick to the defaults. Please.
 
 ## Cluster Architecture
-![RKE2-Infra](RKE2-Infra.png)
+![RKE2-Infra](RKE2-Infra.avif)
 
 ## Features
 Host OS Features:

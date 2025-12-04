@@ -25,6 +25,7 @@
           jq
           yq
           gzip
+          libavif
         ];
         shellHook = ''
           export REPO_ROOT=$(git rev-parse --show-toplevel)

@@ -8,4 +8,4 @@ title = 'Readme'
 
 This is my personal blog.
 
-![Fish](images/Me_holding_small_fish.jpg)
+![Fish](images/Me_holding_small_fish.avif)
