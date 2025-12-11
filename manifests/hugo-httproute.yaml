@@ -5,7 +5,7 @@ metadata:
 spec:
   parentRefs:
   - name: traefik-gateway
-    namespace: traefik
+    namespace: kube-system
     sectionName: web
   hostnames:
   - blog.andrewlee.fun
