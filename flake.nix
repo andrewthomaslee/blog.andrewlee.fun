@@ -1,5 +1,6 @@
 {
   inputs = {
+    self.submodules = true;
     # Rolling Release of Nixpkgs
     nixpkgs.url = "nixpkgs/nixpkgs-unstable";
 
