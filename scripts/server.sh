@@ -55,10 +55,10 @@ if tmux has-session -t $SESSION_NAME 2>/dev/null; then
 fi
 
 tmux new-session -d -s $SESSION_NAME -n "Server⚙️" -c "$REPO_ROOT"
-tmux send-keys -t $SESSION_NAME:0 "hugo server --disableFastRender --noHTTPCache -s $REPO_ROOT/hugo" C-m
+tmux send-keys -t $SESSION_NAME:1 "hugo server --disableFastRender --noHTTPCache -s $REPO_ROOT/hugo" C-m
 
 tmux new-window -t $SESSION_NAME -n "Chrome🌐" -c "$REPO_ROOT"
-tmux send-keys -t $SESSION_NAME:1 "chromium --user-data-dir=/tmp/chrome-dev --new-window --incognito --disable-cache --disk-cache-size=0 --media-cache-size=0 --remote-debugging-port=9222 http://localhost:1313" C-m
+tmux send-keys -t $SESSION_NAME:2 "chromium --user-data-dir=/tmp/chrome-dev --new-window --incognito --disable-cache --disk-cache-size=0 --media-cache-size=0 --remote-debugging-port=9222 http://localhost:1313" C-m
 
 echo "Tmux created session ✨'$SESSION_NAME'✨"
 tmux attach-session -t $SESSION_NAME
