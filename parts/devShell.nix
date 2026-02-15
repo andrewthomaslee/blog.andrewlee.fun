@@ -10,7 +10,7 @@
         alias hc="nix run $REPO_ROOT#container"
         alias hp="nix run $REPO_ROOT#push"
         alias hn="hugo new $REPO_ROOT/hugo/content/post/title_of_the_post.md -s $REPO_ROOT/hugo"
-        alias png-to-avif="for f in *.png; do avifenc "$f" "$${f%.png}.avif" && rm "$f"; done"
+        alias png-to-avif="for f in *.png; do avifenc "$f" "$(basename "$f" .png).avif" && rm "$f"; done"
       '';
     in {
       default = pkgs.mkShell {
