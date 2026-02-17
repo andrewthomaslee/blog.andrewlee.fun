@@ -1,0 +1,13 @@
+networks:
+  proxy:
+    external: true
+
+services:
+  blogAndrewleeFun:
+    image: andrewthomaslee/blog.andrewlee.fun:nk8mw313mzqjbbwg36z22hrvaaqcqcd4
+    networks:
+      - proxy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.blogandrewleefun.rule=Host(`blog.andrewlee.fun`)"
+      - "traefik.http.services.blogandrewleefun.loadbalancer.server.port=8080"
