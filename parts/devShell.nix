@@ -1,4 +1,4 @@
-{inputs, ...}: {
+{...}: {
   perSystem = {
     pkgs,
     system,
@@ -16,16 +16,9 @@
       default = pkgs.mkShell {
         buildInputs = with pkgs; [bash];
         packages = with pkgs; [
-          nginx
           hugo
-          kubectl
           chromium
-          tmux
           skopeo
-          docker
-          jq
-          yq
-          gzip
           libavif
         ];
         shellHook = ''
