@@ -1,7 +1,7 @@
 +++
 date = '2026-02-23T06:44:46-06:00'
 draft = false
-title = 'Linux all the way down🐢'
+title = 'Bytes all the way down🐢'
 summary = 'How learning ❄️Nix *Supercharged* my Linux skills🐧'
 +++
 
