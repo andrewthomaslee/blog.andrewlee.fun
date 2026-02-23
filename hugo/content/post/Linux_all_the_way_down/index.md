@@ -17,22 +17,19 @@ The world is said to rest on the back of a giant turtle, which in turn stands up
 The allegory `Turtles all the way down` illustrates ***infinite regress***, a logical paradox where an explanation relies on the same explanation repeatedly, never reaching a final foundational truth.
 
 
-For software the final foundational truth is **Bytes on Disk**. Yes I know that there is deeper nest, ones and zeros, or even electron present or not . . . but that is not the point.
+For software the final foundational truth is **Bytes on Disk**. Yes I know that there is deeper nesting, ones and zeros, or even electron present or not . . . but that is not the point.
 
 
 For software developers, the point is to learn how to put **Bytes on Disk**.
 
 
-# What if you compiled EVERYTHING from source code? 🧑‍💻
+# What if you compiled EVERYTHING from source? 🧑‍💻
 
-Everyone knows that installing from source code is technically the best way to install a program. But what maniac 🤪 would do that for every piece of software they use? Firefox, VSCode, the Desktop Environment, Glibc, GCC, Coreutils, Systemd, GPU Drivers, and the Linux Kernel . . .
-
-
-What if instead of installing a iso file, you went to every piece of software's public git repo and compiled EVERYTHING from source code and put all the right files in the correct file structure to make a bootable Linux machine? **`Linux From Scratch`**. You'd be nuts🥜, right?
+Everyone knows that installing from source code is technically the best way to install a program. But what maniac 🤪 would do that for every piece of software they use? Firefox, VSCode, the Desktop Environment, Glibc, GCC, Coreutils, Systemd, GPU Drivers, and the Linux Kernel . . . **`Linux From Scratch`**. You'd be nuts🥜
 
 
-#### The benefits of this approach are many. You would have:
-- `Absolute Educational Value`: Single best way to understand how an operating system ***really*** works.
+#### The benefits are many:
+- `Extreme Educational Value`: Single best way to understand how an operating system ***really*** works.
 - `Free and Open Source`: Only public licensed software is used. No proprietary software.
 - `Bleeding Edge Access`: Pulling from the *main* or *unstable* branches gives access to features and bug fixes before anyone else.
 - `Ultimate Customization`: Change build flags and get hardware optimization for your specific hardware.
@@ -40,9 +37,9 @@ What if instead of installing a iso file, you went to every piece of software's 
 - `Dependency Graph`: See the entire dependency graph of the entire system.
 - `Zero Bloat`: Your system will have zero *mystery* processes. If a service is running, it is because you explicitly wanted it to be running.
 
-#### The downsides are many. You would have:
-- `Exorbitant Time Costs`: Compiling a kernel takes a long time.
-- `Nightmare Maintenance`: You have no package manager (apt, yum, pacman). To update a piece of software, you must manually git pull, reconfigure, recompile, and reinstall it.
+#### The downsides are many:
+- `Exorbitant Time Costs`: Compiling a kernel takes a long time. Vistining all the git repos takes a long time.
+- `Nightmare Maintenance`: To update a piece of software, you must manually git pull, reconfigure, recompile, and reinstall it.
 - `Dependency Hell`: Software A might require version 1.2 of Library B, but Software C requires version 1.4 of Library B.
 - `System Instability`: Will take many tries to get usable computer.
 - `Security Risks`: While you theoretically have a smaller attack surface, you are also responsible for updating to the security patches.
@@ -54,12 +51,12 @@ What if instead of installing a iso file, you went to every piece of software's 
 ❌ **Don't do it if**: You want a usable computer to get work done today.
 
 
-## ❄️**NixOS** *is* **Linux From Scratch**
+## ❄️**NixOS** *is* **Linux From Scratch** with ***magic***🪄
 
 If `Linux From Scratch` is building a car by manually welding every piece of metal yourself, **NixOS** is writing a blueprint for a car and having a robot factory build it for you instantly every time you turn the key.
 
 
-Essentially, **NixOS** is Linux built from source by a bunch of bash scripts. There is ***a lot***, ***a lot*** more to it but **NixOS** is a Linux distribution. A very different linux distribution than most.
+Essentially, **NixOS** is Linux built from source by a bunch of bash scripts. There is ***a lot***, ***a lot***, ***a lot*** more to it but **NixOS** **is** a Linux distribution. A very different linux distribution than most.
 
 
 ## Why I started using ❄️**Nix**
@@ -68,25 +65,25 @@ Essentially, **NixOS** is Linux built from source by a bunch of bash scripts. Th
 The end of life for Windows 10 came and I decided to try to use Linux as my daily driver. I installed Ubuntu 25.04. Things just worked. I was able to install all my favorite apps and games. 
 
 
-In the course of learning Linux, I did a lot of tinkering with my system. Changing many files in the `/etc/` directory. Copy and pasting commands from the internet not knowing what they did. 
+In the course of learning Linux, I did a lot of tinkering with my system. Changing many files in the `/etc/` directory. Copy and pasting commands from the internet not knowing what they did. Lots of `Imperative` and non-reproducable steps 
+
+##### Was is `Imperative`?
+Commands, instructions, or direct orders. It tells the system ***how*** to perform a task. (e.g. `apt install firefox`, `nano /etc/fstab`)
 
 
 Everytime I made a change I was very nervous. I didn't know what I was doing and if I broke something then I couldn't boot into my system and I only had one computer at the time! I would have to debug my bricked computer by googling on my phone. **Scary Stuff!**
 
 
-Time came where my tinkering caught up with me. My system was unstable and when I tried fixing it, it became unbootable!
-
-
-As I sat there staring at my monitor waiting for my computer to boot up for 30 minutes, I yearned for a better way.
+Time came where my tinkering caught up with me. My system was unstable and when I tried fixing it, it became unbootable! As I sat there staring at my monitor waiting for my computer to boot up for 30 minutes, I yearned for a better way.
 
 
 I remembered a `Fireship` video about this thing called **Nix**. I had watched it and liked the concept but knew to use **Nix** I would have to learn a new language and invest a lot of time in learning. So I just filed the info away in my head and said "I'll try it one day."
 
 
-But I hate not having a bootable system! I need to do work soon. So I have to give **NixOS** a try just enough to get a working system.
+But I need to do work soon. So I have to give **NixOS** a try just enough to get a working system.
 
 
-On one of my family member's windows computer, I flashed a USB with the **Nix** graphical installer iso and *LIVE BOOTED* it into my computer and formatted my disks!
+On one of my family member's windows computer, I flashed a USB with the **NixOS** graphical installer iso and *LIVE BOOTED* it into my computer and formatted my disks!
 
 
 And it worked! I was surprised that I knew zero about **Nix** but my machine was in fact **NixOS**!
@@ -111,6 +108,21 @@ After a crammed journey of learning **Nix** the programming language via youtube
 - Hardware acceleration with nvidia gpu *(this was a source of pain)*
 
 
+##### What is `Declarative`?
+Statements of fact or desired end-states. It describes what the final result should look like. (e.g. `firefox is installed`, `/dev/sdc is mounted at /home`)
+
+
+Finally, I could tinker with **Zero Fear**😎.
+
+
+I could change everything about my system down to the last byte and felt safe knowing that my whole operating system was **reproducible** and **version controlled**.
+
+
+I was able to run forward as fast as possible and I could always go back. Many times I did need to rollback, and when I did I knew things would just work.😀
+
+
+I enjoyed that I could change from KDE to Gnome to Comsic and back to KDE and it would just work. Something really really hard to do with imperative steps. I tried different Kernels versions with out fear. I achieved ***system configuration nirvana***. 🌞 🌴 🏄
+
 ## The Last %10
 
 For fun I watch youtube videos from conventions and confernces. One day I watched a talk about this project called `Clan`.
@@ -124,10 +136,19 @@ It is very early stages for Clan but I was very interested in this project and w
 At first I used Clan to manage a remote machine in Hetzner cloud and boy did I like it. Clan made managing my remote machine so much easier.
 
 
-For VPS's I was running Ubuntu and Docker, specially the Coolify base image from Hetzner. But a NixOS machine is way safer and more reliable.
+For VPS's I was running Ubuntu and Docker, specifically the Coolify base image from Hetzner. But a NixOS machine is way safer and more reliable.
 
 
 It took me a long time to be brave enough to make my local machine a `Clan` machine but now I will never go back.
+
+
+Now I have a cluster of machines that are:
+- Cattle no Pets
+- Managed by a `Clan Flake`
+- Secrets stored in git and encrypted with `sops`
+- Tag based system configurations
+- In a public git repo
+
 
 ## Why do people hate ❄️**Nix**?
 ![Superiority Complex](superiority-complex.webp)
@@ -142,13 +163,16 @@ People hate **Nix** because it forces you to pay a *massive* upfront cost. ***Le
 #### Things I hear people say about ❄️**Nix**:
 
 - "I don't want to learn a new language."
-- "A programming language with only lambda functions and no types? I don't know how to use that."
-- "Eww, I have to learn a domain specific language just to build my package? Doesn't *( insert package manager here, pip, npm, apt, yum, etc )* do that for me?"
+- "A programming language with only lambda functions and dynamic typing? I don't know how to use that."
+- "Eww, I have to learn a domain specific language just to build my package? Doesn't *( docker, pip, npm, apt, yum, etc )* do that for me?"
 - "Can't we just use Dockerfiles?"
 
 
+Yes. Keep using your package manager and just use Dockerfiles. 👍
+
+
 ## Learning New Things Grows The Brain🧠
-Unfortunately, "I don't want want to learn something new" is a common response.
+Unfortunately, "I don't want to learn something new" is a common response.
 
 
 And ok that's fine. But benefits of learning something new are huge, and not always obvious. Learning new things grows the brain.
@@ -173,7 +197,7 @@ I'm really happy I learned Nix. And I'm happy if you are.
 The `"Turtles"` metaphor extends to NixOS because everything in NixOS is what is called a `derivation`.
 
 
-A derivation is a instruction sheet that tells Nix exactly how to build a package. ie putting bytes on disk. A derivation is the bridge between the dynamic world of the Nix language and the static world of the filesystem. It is the result of evaluating Nix code. It solves "dependency hell" by explicitly listing every single file required for the build before the build even starts.
+A derivation is a instruction sheet that tells Nix exactly how to build a package. e.g. **Putting Bytes on Disk**. A derivation is the bridge between the dynamic world of the Nix language and the static world of the filesystem. It is the result of evaluating Nix code. It solves "dependency hell" by explicitly listing every single input required for the build before the build even starts.
 
 
 EVERYTHING in Nix is a derivation. It is derivations all the way down. ie Nix is a factory that builds derivations.
@@ -185,7 +209,7 @@ Your OS is a derivation, your kernel is a derivation, your desktop environment i
 Once I learned how to make a derivation I was freed from the typical constraints of putting bytes on disk. All I had to do was write a derivation and Nix would build it for me.
 
 
-When managing a `Kubernetes` cluster on NixOS, all I had to do was make the right set of derivations, systemd units, etc files, packagesand so on and when the machine booted I would have a fully functional Kubernetes cluster.
+When managing a `Kubernetes` cluster on NixOS, all I had to do was make the right set of systemd units, etc files, packages, and networking derivations and when the machine booted I would have a fully functional Kubernetes cluster.
 
 
 Low and behold, derivation unlocked the power of my machines! Putting bytes on disk is the name of the game. And Nix is the tool I have chosen to make it happen.
