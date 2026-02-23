@@ -21,7 +21,7 @@ spec:
           type: RuntimeDefault
       containers:
       - name: hugo
-        image: andrewthomaslee/blog.andrewlee.fun:8hq62xiqgrnig78a3fr00jg1lm3rgql1
+        image: andrewthomaslee/blog.andrewlee.fun:1l05mgkck4viki2ywxc0wghkxnc1d88f
         ports:
         - containerPort: 8080
         securityContext:

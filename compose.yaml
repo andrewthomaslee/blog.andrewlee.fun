@@ -4,7 +4,7 @@ networks:
 
 services:
   blogAndrewleeFun:
-    image: andrewthomaslee/blog.andrewlee.fun:nk8mw313mzqjbbwg36z22hrvaaqcqcd4
+    image: andrewthomaslee/blog.andrewlee.fun:1l05mgkck4viki2ywxc0wghkxnc1d88f
     networks:
       - proxy
     labels:
